@@ -8,7 +8,12 @@ export function DialogDemo() {
   return (
     <div className="flex flex-col gap-3">
       <div>
-        <h2 class="text-3xl mb-3">Dialog</h2>
+        <h2 class="text-3xl">Dialog</h2>
+
+        <div className="my-3">
+          <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Dialog.tsx">source</a>
+        </div>
+
         <Button appearance="primary" onClick={() => setOpen(true)}>
           Open
         </Button>

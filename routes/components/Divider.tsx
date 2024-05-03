@@ -4,6 +4,9 @@ export default function DividerSamples() {
   return (
     <div className="grid gap-4">
       <h2 class="text-3xl">Divider</h2>
+
+      <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Divider.tsx">source</a>
+
       <div className="grid grid-cols-2 w-fit gap-4">
         <div className="grid gap-2">
           <h3 class="text-xl">appearance</h3>

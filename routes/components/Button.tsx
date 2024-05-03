@@ -5,6 +5,9 @@ export default function ButtonSamples() {
   return (
     <div className="grid gap-4">
       <h2 class="text-3xl">Button</h2>
+
+      <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Button.tsx">source</a>
+
       <div className="grid grid-cols-2 w-fit gap-4">
         <div className="grid gap-2">
           <h3 class="text-2xl">appearance</h3>

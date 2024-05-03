@@ -11,7 +11,7 @@
     "./theme": "./components/theme.ts"
   },
   "publish": {
-    "exclude": ["./test.ts"],
-    "include": ["./components/css/*"]
+    "include": ["./components"],
+    "exclude": ["./components/scss"]
   }
 }
