@@ -1,4 +1,18 @@
 {
+  "name": "@kf/fluentui",
+  "version": "0.0.1",
+  "exports": {
+    "./button": "./components/Button.tsx",
+    "./dialog": "./components/Dialog.tsx",
+    "./divider": "./components/Divider.tsx",
+    "./provider": "./components/FluentProvider.tsx",
+    "./utils": "./components/utils.ts",
+    "./theme": "./components/theme.ts"
+  },
+  "publish": {
+    "include": ["./components"],
+    "exclude": ["./components/scss"]
+  },
   "lock": false,
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
@@ -11,15 +25,10 @@
   },
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"]
     }
   },
-  "exclude": [
-    "**/_fresh/*"
-  ],
+  "exclude": ["**/_fresh/*"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
