@@ -1,0 +1,17 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@kf/fluentui",
+  "version": "0.0.1",
+  "exports": {
+    "./button": "./components/Button.tsx",
+    "./dialog": "./components/Dialog.tsx",
+    "./divider": "./components/Divider.tsx",
+    "./provider": "./components/FluentProvider.tsx",
+    "./utils": "./components/utils.ts",
+    "./theme": "./components/theme.ts"
+  },
+  "publish": {
+    "exclude": ["./test.ts"],
+    "include": ["./components/css/*"]
+  }
+}
