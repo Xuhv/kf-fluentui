@@ -1,4 +1,4 @@
-import { Divider } from "../../components/Divider.tsx"
+import { Divider } from "../../components/Divider.ts"
 
 export default function DividerSamples() {
   return (

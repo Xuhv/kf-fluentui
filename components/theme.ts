@@ -1,1 +1,1 @@
-export * from "@fluentui/react-theme"
+export * from "@kf/fluentui-tokens"

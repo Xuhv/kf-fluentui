@@ -1,5 +1,5 @@
-import { type PageProps } from "$fresh/server.ts";
-import { FluentProvider } from "../components/FluentProvider.tsx";
+import type { PageProps } from "$fresh/server.ts"
+import { FluentProvider } from "../components/FluentProvider.ts"
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -14,5 +14,5 @@ export default function App({ Component }: PageProps) {
         <Component />
       </body>
     </html>
-  );
+  )
 }

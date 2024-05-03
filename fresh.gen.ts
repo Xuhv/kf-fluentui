@@ -9,7 +9,6 @@ import * as $components_Button from "./routes/components/Button.tsx";
 import * as $components_Dialog from "./routes/components/Dialog.tsx";
 import * as $components_Divider from "./routes/components/Divider.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $Counter from "./islands/Counter.tsx";
 import * as $DialogDemo from "./islands/DialogDemo.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -24,7 +23,6 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
-    "./islands/Counter.tsx": $Counter,
     "./islands/DialogDemo.tsx": $DialogDemo,
   },
   baseUrl: import.meta.url,

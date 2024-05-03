@@ -1,5 +1,5 @@
 import type { PageProps } from "$fresh/server.ts"
-import { Divider } from "../components/Divider.tsx"
+import { Divider } from "../components/Divider.ts"
 
 export default function Layout({ Component }: PageProps) {
   return (

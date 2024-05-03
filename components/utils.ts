@@ -18,3 +18,5 @@ export function mergeClasses(...classes: (string | undefined | { [k in "classNam
     .filter(Boolean)
     .join(" ")
 }
+
+export const IS_BROWSER = typeof document !== "undefined"

@@ -1,4 +1,4 @@
-import { tokens } from "@fluentui/react-theme";
+import { tokens } from "@kf/fluentui-tokens";
 
 const colors = Object.fromEntries(
   Object.entries(tokens)

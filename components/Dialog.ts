@@ -1,8 +1,8 @@
 import type { ComponentChildren, JSX } from "preact"
 import { useEffect, useRef, useState } from "preact/hooks"
-import { mergeRefs, mergeClasses } from "./utils.ts"
-import { registry } from "./FluentProvider.tsx"
-import { IS_BROWSER } from "$fresh/runtime.ts"
+import { mergeRefs, mergeClasses, IS_BROWSER } from "./utils.ts"
+import { registry } from "./FluentProvider.ts"
+import { createElement } from "preact"
 
 if (!IS_BROWSER) {
   const styles = await Deno.readTextFile(import.meta.resolve("./css/dialog.css").substring(7))
@@ -37,18 +37,16 @@ export function Dialog({ modalType = "modal", ...props }: DialogProps): JSX.Elem
   }, [dialogRef])
 
   if (modalType === "non-modal") {
-    return props.open ? <div ref={ref} {...props} class={mergeClasses("dialog", props)} /> : null
+    return props.open ? createElement("div", { ...props, ref, class: mergeClasses("dialog", props) }, props.children) : null
   }
 
-  return (
-    <Backdrop
-      open={props.open}
-      onCancel={() => {
-        modalType === "modal" && props.onOpenChange?.(false)
-      }}>
-      {props.open ? <div ref={ref} {...props} class={mergeClasses("dialog", props)} /> : null}
-    </Backdrop>
-  )
+  return createElement(Backdrop, {
+    open: props.open,
+    onCancel: () => {
+      modalType === "modal" && props.onOpenChange?.(false)
+    },
+    children: props.open ? createElement("div", { ...props, ref, class: mergeClasses("dialog", props) }, props.children) : null
+  })
 }
 
 function Backdrop(props: {
@@ -58,15 +56,15 @@ function Backdrop(props: {
 }) {
   const ref = useRef<HTMLDivElement>(null)
 
-  return (
-    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-    <div
-      ref={ref}
-      onClick={e => {
+  return createElement(
+    "div",
+    {
+      ref,
+      onClick: e => {
         e.target === ref.current && props.onCancel()
-      }}
-      class={props.open ? "backdrop open" : "backdrop"}>
-      {props.children}
-    </div>
+      },
+      class: props.open ? "backdrop open" : "backdrop"
+    },
+    props.children
   )
 }

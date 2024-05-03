@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button.tsx"
+import { Button } from "../../components/Button.ts"
 import IconIcons from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/icons.tsx"
 
 export default function ButtonSamples() {

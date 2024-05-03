@@ -1,8 +1,7 @@
 import type { JSX } from "preact"
 import { createElement } from "preact"
-import { mergeClasses } from "./utils.ts"
-import { registry } from "./FluentProvider.tsx"
-import { IS_BROWSER } from "$fresh/runtime.ts"
+import { IS_BROWSER, mergeClasses } from "./utils.ts"
+import { registry } from "./FluentProvider.ts"
 
 if (!IS_BROWSER) {
   const styles = await Deno.readTextFile(import.meta.resolve("./css/button.css").substring(7))
@@ -24,7 +23,7 @@ type ButtonProps = Omit<JSX.HTMLAttributes<HTMLButtonElement>, "size" | "class" 
 
 /**
  * @see https://react.fluentui.dev/?path=/docs/components-button-button--default
- * @returns 
+ * @returns
  */
 export function Button({
   appearance = "secondary",

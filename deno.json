@@ -2,10 +2,10 @@
   "name": "@kf/fluentui",
   "version": "0.0.1",
   "exports": {
-    "./button": "./components/Button.tsx",
-    "./dialog": "./components/Dialog.tsx",
-    "./divider": "./components/Divider.tsx",
-    "./provider": "./components/FluentProvider.tsx",
+    "./button": "./components/Button.ts",
+    "./dialog": "./components/Dialog.ts",
+    "./divider": "./components/Divider.ts",
+    "./provider": "./components/FluentProvider.ts",
     "./utils": "./components/utils.ts",
     "./theme": "./components/theme.ts"
   },
@@ -32,11 +32,8 @@
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
-    "@fluentui/react-theme": "https://esm.sh/@fluentui/react-theme@9.1.19",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "preact": "https://esm.sh/preact@10.19.6",
-    "preact/": "https://esm.sh/preact@10.19.6/",
+    "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
+    "preact": "npm:preact@10.21.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js"
