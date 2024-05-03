@@ -1,14 +1,32 @@
-import type { ComponentChildren, JSX } from "preact"
-import { useEffect, useRef, useState } from "preact/hooks"
+import type { ComponentChildren, JSX, Ref } from "preact"
+import { createContext } from "preact"
+import { forwardRef } from "preact/compat"
+import { useEffect, useRef, useState, useContext } from "preact/hooks"
 import { mergeRefs, mergeClasses, IS_BROWSER } from "./utils.ts"
 import { registry } from "./FluentProvider.ts"
 import { createElement } from "preact"
+import IconX from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/x.tsx"
+import { Button } from "./Button.ts"
 
 if (!IS_BROWSER) {
   const styles = await Deno.readTextFile(import.meta.resolve("./css/dialog.css").substring(7))
 
   registry.push(styles)
 }
+
+type DialogContextState = {
+  nonModal: boolean
+  onOpenChange?: (open: boolean) => void
+  hasAction: boolean
+  setHasAction: (hasAction: boolean) => void
+}
+
+const DialogContext = createContext<DialogContextState>({
+  nonModal: false,
+  onOpenChange: undefined,
+  hasAction: false,
+  setHasAction: () => {}
+})
 
 type DialogProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "open" | "className" | "class"> & {
   open: boolean
@@ -17,9 +35,13 @@ type DialogProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "open" | "className"
   className?: string
 }
 
-export function Dialog({ modalType = "modal", ...props }: DialogProps): JSX.Element | null {
+export const Dialog = forwardRef(function Dialog(
+  { modalType = "modal", ...props }: DialogProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element | null {
   const [dialogRef, setDialogRef] = useState<HTMLDivElement | null>(null)
-  const ref = mergeRefs(setDialogRef, props.ref)
+  const _ref = mergeRefs(setDialogRef, ref)
+  const [hasAction, setHasAction] = useState(false)
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
@@ -36,8 +58,26 @@ export function Dialog({ modalType = "modal", ...props }: DialogProps): JSX.Elem
     el?.focus()
   }, [dialogRef])
 
+  const render = () =>
+    createElement(
+      "div",
+      { ...props, _ref, class: mergeClasses("dialog", props) },
+      createElement(
+        DialogContext.Provider,
+        {
+          value: {
+            nonModal: modalType === "non-modal",
+            onOpenChange: props.onOpenChange,
+            hasAction,
+            setHasAction
+          }
+        },
+        props.children
+      )
+    )
+
   if (modalType === "non-modal") {
-    return props.open ? createElement("div", { ...props, ref, class: mergeClasses("dialog", props) }, props.children) : null
+    return props.open ? render() : null
   }
 
   return createElement(Backdrop, {
@@ -45,9 +85,9 @@ export function Dialog({ modalType = "modal", ...props }: DialogProps): JSX.Elem
     onCancel: () => {
       modalType === "modal" && props.onOpenChange?.(false)
     },
-    children: props.open ? createElement("div", { ...props, ref, class: mergeClasses("dialog", props) }, props.children) : null
+    children: props.open ? render() : null
   })
-}
+})
 
 function Backdrop(props: {
   onCancel: () => void
@@ -68,3 +108,58 @@ function Backdrop(props: {
     props.children
   )
 }
+
+type DialogTitleProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "className" | "class"> & {
+  className?: string
+  children?: ComponentChildren
+}
+
+/**
+ * A Dialog with modalType='non-modal' will have a close button action.
+ * @returns
+ */
+export const DialogTitle = forwardRef(function DialogTitle(
+  { children, className, ...props }: DialogTitleProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element {
+  const { nonModal, onOpenChange, hasAction } = useContext<DialogContextState>(DialogContext)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (nonModal && !hasAction) {
+      console.log(buttonRef.current)
+
+      // buttonRef.current?.focus()
+    }
+  }, [nonModal, hasAction])
+
+  return createElement("div", { ...props, className: `dialog-title ${className}`, ref }, [
+    children ?? "",
+    nonModal &&
+      createElement(Button, {
+        ref: buttonRef,
+        className: "dialog-dismiss",
+        appearance: "subtle",
+        onClick: () => onOpenChange?.(false),
+        icon: createElement(IconX, { className: "icon" })
+      })
+  ])
+})
+
+type DialogActionsProps = DialogTitleProps
+
+export const DialogActions = forwardRef(function DialogActions(
+  { className, children, ...props }: DialogActionsProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element {
+  const { setHasAction } = useContext<DialogContextState>(DialogContext)
+  const actionsRef = useRef<HTMLDivElement>(null)
+  const _ref = mergeRefs(actionsRef, ref)
+
+  useEffect(() => {
+    setHasAction(true)
+    ;(actionsRef.current?.querySelector("input, button, textarea") as HTMLInputElement)?.focus()
+  }, [setHasAction])
+
+  return createElement("div", { ...props, className: `dialog-actions ${className}`, ref: _ref }, children)
+})

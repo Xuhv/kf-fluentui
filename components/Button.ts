@@ -1,5 +1,6 @@
-import type { JSX } from "preact"
+import type { JSX, Ref } from "preact"
 import { createElement } from "preact"
+import { forwardRef } from "preact/compat"
 import { IS_BROWSER, mergeClasses } from "./utils.ts"
 import { registry } from "./FluentProvider.ts"
 
@@ -25,24 +26,29 @@ type ButtonProps = Omit<JSX.HTMLAttributes<HTMLButtonElement>, "size" | "class" 
  * @see https://react.fluentui.dev/?path=/docs/components-button-button--default
  * @returns
  */
-export function Button({
-  appearance = "secondary",
-  size = "medium",
-  shape = "rounded",
-  as = "button",
-  iconPosition = "before",
-  icon,
-  disabledFocusable,
-  children,
-  onClick,
-  className,
-  ...props
-}: ButtonProps): JSX.Element {
+export const Button = forwardRef(function Button(
+  {
+    appearance = "secondary",
+    size = "medium",
+    shape = "rounded",
+    as = "button",
+    iconPosition = "before",
+    icon,
+    disabledFocusable,
+    children,
+    onClick,
+    className,
+    ...props
+  }: ButtonProps,
+  ref: Ref<HTMLButtonElement>
+): JSX.Element {
   const content = iconPosition === "before" ? [icon, children] : [children, icon]
+
   return createElement(
     as,
     {
       ...props,
+      ref,
       className: mergeClasses(
         "button",
         appearance,
@@ -56,4 +62,4 @@ export function Button({
     },
     content
   )
-}
+})

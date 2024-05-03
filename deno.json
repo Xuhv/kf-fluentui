@@ -1,6 +1,6 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "exports": {
     "./button": "./components/Button.ts",
     "./dialog": "./components/Dialog.ts",
@@ -10,7 +10,7 @@
     "./theme": "./components/theme.ts"
   },
   "publish": {
-    "include": ["./components"],
+    "include": ["./components", "./deno.json", "README.md"],
     "exclude": ["./components/scss"]
   },
   "lock": false,
