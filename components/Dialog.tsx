@@ -17,7 +17,7 @@ type DialogProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "open" | "className"
   className?: string
 }
 
-export function Dialog({ modalType = "modal", ...props }: DialogProps) {
+export function Dialog({ modalType = "modal", ...props }: DialogProps): JSX.Element | null {
   const [dialogRef, setDialogRef] = useState<HTMLDivElement | null>(null)
   const ref = mergeRefs(setDialogRef, props.ref)
 

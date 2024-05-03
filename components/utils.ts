@@ -12,7 +12,7 @@ export function mergeRefs<T>(...refs: Array<Ref<T> | undefined>): RefCallback<T>
   }
 }
 
-export function mergeClasses(...classes: (string | undefined | { [k in "className" | "class"]?: string | undefined })[]) {
+export function mergeClasses(...classes: (string | undefined | { [k in "className" | "class"]?: string | undefined })[]): string {
   return classes
     .map(x => (typeof x === "object" ? x.class ?? x.className : x))
     .filter(Boolean)

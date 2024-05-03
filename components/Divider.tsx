@@ -2,6 +2,7 @@ import type { ComponentChildren } from "preact"
 import { mergeClasses } from "./utils.ts"
 import { registry } from "./FluentProvider.tsx"
 import { IS_BROWSER } from "$fresh/runtime.ts"
+import type { JSX } from "preact";
 
 if (!IS_BROWSER) {
   const styles = await Deno.readTextFile(import.meta.resolve("./css/divider.css").substring(7))
@@ -17,7 +18,7 @@ type DividerProps = {
   inset?: boolean
 }
 
-export function Divider({ appearance = "default", alignContent = "center", ...props }: DividerProps) {
+export function Divider({ appearance = "default", alignContent = "center", ...props }: DividerProps): JSX.Element {
   return (
     <div
       className={mergeClasses(
