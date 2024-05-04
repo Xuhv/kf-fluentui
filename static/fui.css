@@ -1,4 +1,4 @@
-.GVP7La_Button {
+.QwtDLW_Button {
   box-sizing: border-box;
   vertical-align: middle;
   font-family: var(--fontFamilyBase);
@@ -23,93 +23,93 @@
   overflow: hidden;
 }
 
-.GVP7La_Button:not(:where(:disabled, [aria-disabled])) {
+.QwtDLW_Button:not(:where(:disabled, [aria-disabled])) {
   background-color: var(--colorNeutralBackground1);
   color: var(--colorNeutralForeground1);
   border-color: var(--colorNeutralStroke1);
 }
 
-.GVP7La_Button:not(:where(:disabled, [aria-disabled])):hover {
+.QwtDLW_Button:not(:where(:disabled, [aria-disabled])):hover {
   background-color: var(--colorNeutralBackground1Hover);
   border-color: var(--colorNeutralStroke1Hover);
   color: var(--colorNeutralForeground1Hover);
 }
 
-.GVP7La_Button:not(:where(:disabled, [aria-disabled])):active {
+.QwtDLW_Button:not(:where(:disabled, [aria-disabled])):active {
   background-color: var(--colorNeutralBackground1Pressed);
   border-color: var(--colorNeutralStroke1Pressed);
   color: var(--colorNeutralForeground1Pressed);
 }
 
-.GVP7La_Button:disabled, .GVP7La_Button[aria-disabled="true"] {
+.QwtDLW_Button:disabled, .QwtDLW_Button[aria-disabled="true"] {
   border-color: var(--colorNeutralStrokeDisabled);
   cursor: not-allowed;
   background-color: var(--colorNeutralBackgroundDisabled);
   color: var(--colorNeutralForegroundDisabled);
 }
 
-.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])) {
+.QwtDLW_Button.QwtDLW_primary:not(:where(:disabled, [aria-disabled])) {
   color: var(--colorNeutralForegroundOnBrand);
   background-color: var(--colorBrandBackground);
 }
 
-.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])):hover {
+.QwtDLW_Button.QwtDLW_primary:not(:where(:disabled, [aria-disabled])):hover {
   background-color: var(--colorBrandBackgroundHover);
 }
 
-.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])):active {
+.QwtDLW_Button.QwtDLW_primary:not(:where(:disabled, [aria-disabled])):active {
   background-color: var(--colorBrandBackgroundPressed);
 }
 
-.GVP7La_Button.GVP7La_outline, .GVP7La_Button.GVP7La_transparent {
+.QwtDLW_Button.QwtDLW_outline, .QwtDLW_Button.QwtDLW_transparent {
   background-color: var(--colorTransparentBackground);
 }
 
-.GVP7La_Button.GVP7La_primary, .GVP7La_Button.GVP7La_subtle, .GVP7La_Button.GVP7La_transparent {
+.QwtDLW_Button.QwtDLW_primary, .QwtDLW_Button.QwtDLW_subtle, .QwtDLW_Button.QwtDLW_transparent {
   border-color: #0000;
 }
 
-.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])) {
+.QwtDLW_Button.QwtDLW_subtle:not(:where(:disabled, [aria-disabled])) {
   background-color: var(--colorSubtleBackground);
   color: var(--colorNeutralForeground2);
   border-color: #0000;
 }
 
-.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):hover {
+.QwtDLW_Button.QwtDLW_subtle:not(:where(:disabled, [aria-disabled])):hover {
   background-color: var(--colorSubtleBackgroundHover);
   color: var(--colorNeutralForeground2Hover);
 }
 
-.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):hover .Icon {
+.QwtDLW_Button.QwtDLW_subtle:not(:where(:disabled, [aria-disabled])):hover .Icon {
   color: var(--colorNeutralForeground2BrandHover);
 }
 
-.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):active {
+.QwtDLW_Button.QwtDLW_subtle:not(:where(:disabled, [aria-disabled])):active {
   background-color: var(--colorSubtleBackgroundPressed);
   color: var(--colorNeutralForeground2Pressed);
 }
 
-.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):active .Icon {
+.QwtDLW_Button.QwtDLW_subtle:not(:where(:disabled, [aria-disabled])):active .Icon {
   color: var(--colorNeutralForeground2BrandPressed);
 }
 
-.GVP7La_Button.GVP7La_transparent:not(:where(:disabled, [aria-disabled])):hover {
+.QwtDLW_Button.QwtDLW_transparent:not(:where(:disabled, [aria-disabled])):hover {
   color: var(--colorNeutralForeground2BrandHover);
 }
 
-.GVP7La_Button.GVP7La_transparent:not(:where(:disabled, [aria-disabled])):active {
+.QwtDLW_Button.QwtDLW_transparent:not(:where(:disabled, [aria-disabled])):active {
   color: var(--colorNeutralForeground2BrandPressed);
 }
 
-.GVP7La_Button.GVP7La_circle {
+.QwtDLW_Button.QwtDLW_circle {
   border-radius: var(--borderRadiusCircular);
 }
 
-.GVP7La_Button.GVP7La_square {
+.QwtDLW_Button.QwtDLW_square {
   border-radius: var(--borderRadiusNone);
 }
 
-.GVP7La_Button.GVP7La_small {
+.QwtDLW_Button.QwtDLW_small {
   --icon-button-padding: 1px;
   font-size: var(--fontSizeBase200);
   line-height: var(--lineHeightBase200);
@@ -117,22 +117,22 @@
   padding: 3px var(--spacingHorizontalS);
 }
 
-.GVP7La_Button.GVP7La_large {
+.QwtDLW_Button.QwtDLW_large {
   --icon-button-padding: 7px;
   font-size: var(--fontSizeBase400);
   line-height: var(--lineHeightBase400);
   padding: 8px var(--spacingHorizontalL);
 }
 
-.GVP7La_Button.GVP7La_withIcon {
+.QwtDLW_Button.QwtDLW_withIcon {
   padding: var(--icon-button-padding) var(--spacingHorizontalM);
 }
 
-.GVP7La_Button.GVP7La_iconOnly {
+.QwtDLW_Button.QwtDLW_iconOnly {
   padding: var(--icon-button-padding);
   min-width: unset;
 }
-.ySzf9q_Dialog {
+.rpFVcW_Dialog {
   overflow: unset;
   border: 1px solid var(--colorTransparentStroke);
   border-radius: var(--borderRadiusXLarge);
@@ -152,7 +152,7 @@
   inset: 0;
 }
 
-.ySzf9q_Backdrop {
+.rpFVcW_Backdrop {
   transition-duration: var(--durationGentle);
   transition-timing-function: var(--curveLinear);
   will-change: opacity;
@@ -164,30 +164,30 @@
   inset: 0;
 }
 
-.ySzf9q_Backdrop.ySzf9q_open {
+.rpFVcW_Backdrop.rpFVcW_open {
   opacity: 1;
   display: unset;
 }
 
-.ySzf9q_DialogTitle {
+.rpFVcW_DialogTitle {
   font-size: var(--fontSizeHero700);
   justify-content: space-between;
   display: flex;
 }
 
-.ySzf9q_DialogTitle .ySzf9q_DialogDismiss > .Icon {
+.rpFVcW_DialogTitle .rpFVcW_DialogDismiss > .Icon {
   align-content: end;
   align-self: center;
   width: 24px;
   height: 24px;
 }
 
-.ySzf9q_DialogActions {
+.rpFVcW_DialogActions {
   justify-content: flex-end;
   gap: 20px;
   display: flex;
 }
-.MOGWiG_Divider {
+._03Rvwq_Divider {
   color: var(--colorNeutralForeground2);
   flex-grow: 1;
   justify-content: center;
@@ -195,31 +195,31 @@
   display: flex;
 }
 
-.MOGWiG_Divider.MOGWiG_hasContent {
+._03Rvwq_Divider._03Rvwq_hasContent {
   gap: 12px;
 }
 
-.MOGWiG_Divider.MOGWiG_vertical {
+._03Rvwq_Divider._03Rvwq_vertical {
   flex-direction: column;
 }
 
-.MOGWiG_Divider.MOGWiG_vertical:before, .MOGWiG_Divider.MOGWiG_vertical:after {
+._03Rvwq_Divider._03Rvwq_vertical:before, ._03Rvwq_Divider._03Rvwq_vertical:after {
   border-left-width: var(--strokeWidthThin);
 }
 
-.MOGWiG_Divider:not(.MOGWiG_vertical):before, .MOGWiG_Divider:not(.MOGWiG_vertical):after {
+._03Rvwq_Divider:not(._03Rvwq_vertical):before, ._03Rvwq_Divider:not(._03Rvwq_vertical):after {
   border-top-width: var(--strokeWidthThin);
 }
 
-.MOGWiG_Divider.MOGWiG_inset {
+._03Rvwq_Divider._03Rvwq_inset {
   padding: 0 12px;
 }
 
-.MOGWiG_Divider.MOGWiG_inset.MOGWiG_vertical {
+._03Rvwq_Divider._03Rvwq_inset._03Rvwq_vertical {
   padding: 12px 0;
 }
 
-.MOGWiG_Divider:before, .MOGWiG_Divider:after {
+._03Rvwq_Divider:before, ._03Rvwq_Divider:after {
   content: "";
   border-style: solid;
   border-width: 0;
@@ -228,35 +228,35 @@
   min-width: 8px;
 }
 
-.MOGWiG_Divider.MOGWiG_subtle {
+._03Rvwq_Divider._03Rvwq_subtle {
   color: var(--colorNeutralForeground3);
 }
 
-.MOGWiG_Divider.MOGWiG_subtle:before, .MOGWiG_Divider.MOGWiG_subtle:after {
+._03Rvwq_Divider._03Rvwq_subtle:before, ._03Rvwq_Divider._03Rvwq_subtle:after {
   border-color: var(--colorNeutralStroke3);
 }
 
-.MOGWiG_Divider.MOGWiG_brand {
-  color: var(--colorPaletteRedBackground3);
+._03Rvwq_Divider._03Rvwq_brand {
+  color: var(--colorBrandForeground1);
 }
 
-.MOGWiG_Divider.MOGWiG_brand:before, .MOGWiG_Divider.MOGWiG_brand:after {
-  border-color: var(--colorPaletteRedBorder2);
+._03Rvwq_Divider._03Rvwq_brand:before, ._03Rvwq_Divider._03Rvwq_brand:after {
+  border-color: var(--colorBrandStroke1);
 }
 
-.MOGWiG_Divider.MOGWiG_strong {
+._03Rvwq_Divider._03Rvwq_strong {
   color: var(--colorNeutralForeground1);
 }
 
-.MOGWiG_Divider.MOGWiG_strong:before, .MOGWiG_Divider.MOGWiG_strong:after {
+._03Rvwq_Divider._03Rvwq_strong:before, ._03Rvwq_Divider._03Rvwq_strong:after {
   border-color: var(--colorNeutralStroke1);
 }
 
-.MOGWiG_Divider.MOGWiG_start:before, .MOGWiG_Divider.MOGWiG_end:after {
+._03Rvwq_Divider._03Rvwq_start:before, ._03Rvwq_Divider._03Rvwq_end:after {
   flex-grow: 0;
 }
 
-.MOGWiG_Divider > .MOGWiG_Content {
+._03Rvwq_Divider > ._03Rvwq_Content {
   font-size: var(--fontSizeBase200);
   width: fit-content;
 }

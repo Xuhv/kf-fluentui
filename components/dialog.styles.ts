@@ -1,1 +1,1 @@
-export default {"open":"rpFVcW_open","Dialog":"rpFVcW_Dialog","DialogActions":"rpFVcW_DialogActions","Backdrop":"rpFVcW_Backdrop","DialogDismiss":"rpFVcW_DialogDismiss","DialogTitle":"rpFVcW_DialogTitle"}
+export default {"Backdrop":"rpFVcW_Backdrop","DialogTitle":"rpFVcW_DialogTitle","open":"rpFVcW_open","DialogDismiss":"rpFVcW_DialogDismiss","DialogActions":"rpFVcW_DialogActions","Dialog":"rpFVcW_Dialog"}

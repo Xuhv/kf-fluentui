@@ -1,6 +1,6 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": {
     ".": "./entry.ts",
     "./buildTheme": "./buildTheme.ts"
@@ -35,7 +35,6 @@
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
     "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
-    "lightningcss": "npm:lightningcss@^1.24.1",
     "preact": "npm:preact@10.21.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
