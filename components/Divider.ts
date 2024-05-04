@@ -5,7 +5,7 @@ import type { JSX } from "preact"
 import { createElement } from "preact"
 
 if (!IS_BROWSER) {
-  const styles = await Deno.readTextFile(import.meta.resolve("./css/divider.css").substring(7))
+  const styles = await fetch(import.meta.resolve("./css/divider.css")).then(res => res.text())
 
   registry.push(styles)
 }

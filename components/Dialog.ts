@@ -1,15 +1,44 @@
-import type { ComponentChildren, JSX, Ref } from "preact"
+import type { ComponentChildren, JSX, Ref, FunctionalComponent } from "preact"
 import { createContext } from "preact"
 import { forwardRef } from "preact/compat"
 import { useEffect, useRef, useState, useContext } from "preact/hooks"
 import { mergeRefs, mergeClasses, IS_BROWSER } from "./utils.ts"
 import { registry } from "./FluentProvider.ts"
 import { createElement } from "preact"
-import IconX from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/x.tsx"
 import { Button } from "./Button.ts"
+import { jsx as _jsx, jsxs as _jsxs } from "preact/jsx-runtime"
+
+function IconX({ size = 24, color = "currentColor", stroke = 2, ...props }) {
+  return /*#__PURE__*/ _jsxs("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    class: "icon icon-tabler icon-tabler-x",
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    "stroke-width": stroke,
+    stroke: color,
+    fill: "none",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round",
+    ...props,
+    children: [
+      /*#__PURE__*/ _jsx("path", {
+        stroke: "none",
+        d: "M0 0h24v24H0z",
+        fill: "none"
+      }),
+      /*#__PURE__*/ _jsx("path", {
+        d: "M18 6l-12 12"
+      }),
+      /*#__PURE__*/ _jsx("path", {
+        d: "M6 6l12 12"
+      })
+    ]
+  })
+}
 
 if (!IS_BROWSER) {
-  const styles = await Deno.readTextFile(import.meta.resolve("./css/dialog.css").substring(7))
+  const styles = await fetch(import.meta.resolve("./css/dialog.css")).then(res => res.text())
 
   registry.push(styles)
 }
@@ -35,7 +64,7 @@ type DialogProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "open" | "className"
   className?: string
 }
 
-export const Dialog = forwardRef(function Dialog(
+export const Dialog: FunctionalComponent<DialogProps> = forwardRef(function Dialog(
   { modalType = "modal", ...props }: DialogProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element | null {
@@ -118,7 +147,7 @@ type DialogTitleProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, "className" | "
  * A Dialog with modalType='non-modal' will have a close button action.
  * @returns
  */
-export const DialogTitle = forwardRef(function DialogTitle(
+export const DialogTitle: FunctionalComponent<DialogTitleProps> = forwardRef(function DialogTitle(
   { children, className, ...props }: DialogTitleProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element {
@@ -127,9 +156,7 @@ export const DialogTitle = forwardRef(function DialogTitle(
 
   useEffect(() => {
     if (nonModal && !hasAction) {
-      console.log(buttonRef.current)
-
-      // buttonRef.current?.focus()
+      buttonRef.current?.focus()
     }
   }, [nonModal, hasAction])
 
@@ -148,7 +175,7 @@ export const DialogTitle = forwardRef(function DialogTitle(
 
 type DialogActionsProps = DialogTitleProps
 
-export const DialogActions = forwardRef(function DialogActions(
+export const DialogActions: FunctionalComponent<DialogActionsProps> = forwardRef(function DialogActions(
   { className, children, ...props }: DialogActionsProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element {
