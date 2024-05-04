@@ -24,7 +24,7 @@ jobs:
           deno-version: v1.x
 
       - name: Build step
-        run: "deno task build"
+        run: "deno task build && git add . && git commit -m 'commit before publish, it will not affect the source repo'"
 
       - name: Publish package
         run: npx jsr publish

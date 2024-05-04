@@ -2,7 +2,8 @@
  * You can execute this script to generate preset themes
  * @example
  * // all preset themes will be generated in ./static
- * deno run -Ar 'https://jsr.io/@kf/fluentui/buildTheme.ts'
+ * 
+ * deno run -Ar 'jsr:@kf/fluentui/buildTheme'
  * @module
  */
 
