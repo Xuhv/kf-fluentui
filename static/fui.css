@@ -1,0 +1,262 @@
+.GVP7La_Button {
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-family: var(--fontFamilyBase);
+  user-select: none;
+  transition-duration: var(--durationFaster);
+  transition-property: background, border, color;
+  transition-timing-function: var(--curveEasyEase);
+  border-width: var(--strokeWidthThin);
+  border-radius: var(--borderRadiusMedium);
+  --icon-button-padding: 5px;
+  font-size: var(--fontSizeBase300);
+  font-weight: var(--fontWeightSemibold);
+  line-height: var(--lineHeightBase300);
+  padding: 5px var(--spacingHorizontalS);
+  border-style: solid;
+  outline-style: none;
+  justify-content: center;
+  align-items: center;
+  min-width: 96px;
+  text-decoration-line: none;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.GVP7La_Button:not(:where(:disabled, [aria-disabled])) {
+  background-color: var(--colorNeutralBackground1);
+  color: var(--colorNeutralForeground1);
+  border-color: var(--colorNeutralStroke1);
+}
+
+.GVP7La_Button:not(:where(:disabled, [aria-disabled])):hover {
+  background-color: var(--colorNeutralBackground1Hover);
+  border-color: var(--colorNeutralStroke1Hover);
+  color: var(--colorNeutralForeground1Hover);
+}
+
+.GVP7La_Button:not(:where(:disabled, [aria-disabled])):active {
+  background-color: var(--colorNeutralBackground1Pressed);
+  border-color: var(--colorNeutralStroke1Pressed);
+  color: var(--colorNeutralForeground1Pressed);
+}
+
+.GVP7La_Button:disabled, .GVP7La_Button[aria-disabled="true"] {
+  border-color: var(--colorNeutralStrokeDisabled);
+  cursor: not-allowed;
+  background-color: var(--colorNeutralBackgroundDisabled);
+  color: var(--colorNeutralForegroundDisabled);
+}
+
+.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])) {
+  color: var(--colorNeutralForegroundOnBrand);
+  background-color: var(--colorBrandBackground);
+}
+
+.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])):hover {
+  background-color: var(--colorBrandBackgroundHover);
+}
+
+.GVP7La_Button.GVP7La_primary:not(:where(:disabled, [aria-disabled])):active {
+  background-color: var(--colorBrandBackgroundPressed);
+}
+
+.GVP7La_Button.GVP7La_outline, .GVP7La_Button.GVP7La_transparent {
+  background-color: var(--colorTransparentBackground);
+}
+
+.GVP7La_Button.GVP7La_primary, .GVP7La_Button.GVP7La_subtle, .GVP7La_Button.GVP7La_transparent {
+  border-color: #0000;
+}
+
+.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])) {
+  background-color: var(--colorSubtleBackground);
+  color: var(--colorNeutralForeground2);
+  border-color: #0000;
+}
+
+.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):hover {
+  background-color: var(--colorSubtleBackgroundHover);
+  color: var(--colorNeutralForeground2Hover);
+}
+
+.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):hover .Icon {
+  color: var(--colorNeutralForeground2BrandHover);
+}
+
+.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):active {
+  background-color: var(--colorSubtleBackgroundPressed);
+  color: var(--colorNeutralForeground2Pressed);
+}
+
+.GVP7La_Button.GVP7La_subtle:not(:where(:disabled, [aria-disabled])):active .Icon {
+  color: var(--colorNeutralForeground2BrandPressed);
+}
+
+.GVP7La_Button.GVP7La_transparent:not(:where(:disabled, [aria-disabled])):hover {
+  color: var(--colorNeutralForeground2BrandHover);
+}
+
+.GVP7La_Button.GVP7La_transparent:not(:where(:disabled, [aria-disabled])):active {
+  color: var(--colorNeutralForeground2BrandPressed);
+}
+
+.GVP7La_Button.GVP7La_circle {
+  border-radius: var(--borderRadiusCircular);
+}
+
+.GVP7La_Button.GVP7La_square {
+  border-radius: var(--borderRadiusNone);
+}
+
+.GVP7La_Button.GVP7La_small {
+  --icon-button-padding: 1px;
+  font-size: var(--fontSizeBase200);
+  line-height: var(--lineHeightBase200);
+  font-weight: var(--fontWeightRegular);
+  padding: 3px var(--spacingHorizontalS);
+}
+
+.GVP7La_Button.GVP7La_large {
+  --icon-button-padding: 7px;
+  font-size: var(--fontSizeBase400);
+  line-height: var(--lineHeightBase400);
+  padding: 8px var(--spacingHorizontalL);
+}
+
+.GVP7La_Button.GVP7La_withIcon {
+  padding: var(--icon-button-padding) var(--spacingHorizontalM);
+}
+
+.GVP7La_Button.GVP7La_iconOnly {
+  padding: var(--icon-button-padding);
+  min-width: unset;
+}
+.ySzf9q_Dialog {
+  overflow: unset;
+  border: 1px solid var(--colorTransparentStroke);
+  border-radius: var(--borderRadiusXLarge);
+  user-select: unset;
+  visibility: unset;
+  box-sizing: border-box;
+  background-color: var(--colorNeutralBackground1);
+  color: var(--colorNeutralForeground1);
+  box-shadow: var(--shadow64);
+  max-width: 600px;
+  height: fit-content;
+  max-height: 100vh;
+  margin: auto;
+  padding: 24px;
+  display: block;
+  position: fixed;
+  inset: 0;
+}
+
+.ySzf9q_Backdrop {
+  transition-duration: var(--durationGentle);
+  transition-timing-function: var(--curveLinear);
+  will-change: opacity;
+  opacity: 0;
+  background-color: #0006;
+  transition-property: opacity;
+  display: none;
+  position: fixed;
+  inset: 0;
+}
+
+.ySzf9q_Backdrop.ySzf9q_open {
+  opacity: 1;
+  display: unset;
+}
+
+.ySzf9q_DialogTitle {
+  font-size: var(--fontSizeHero700);
+  justify-content: space-between;
+  display: flex;
+}
+
+.ySzf9q_DialogTitle .ySzf9q_DialogDismiss > .Icon {
+  align-content: end;
+  align-self: center;
+  width: 24px;
+  height: 24px;
+}
+
+.ySzf9q_DialogActions {
+  justify-content: flex-end;
+  gap: 20px;
+  display: flex;
+}
+.MOGWiG_Divider {
+  color: var(--colorNeutralForeground2);
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.MOGWiG_Divider.MOGWiG_hasContent {
+  gap: 12px;
+}
+
+.MOGWiG_Divider.MOGWiG_vertical {
+  flex-direction: column;
+}
+
+.MOGWiG_Divider.MOGWiG_vertical:before, .MOGWiG_Divider.MOGWiG_vertical:after {
+  border-left-width: var(--strokeWidthThin);
+}
+
+.MOGWiG_Divider:not(.MOGWiG_vertical):before, .MOGWiG_Divider:not(.MOGWiG_vertical):after {
+  border-top-width: var(--strokeWidthThin);
+}
+
+.MOGWiG_Divider.MOGWiG_inset {
+  padding: 0 12px;
+}
+
+.MOGWiG_Divider.MOGWiG_inset.MOGWiG_vertical {
+  padding: 12px 0;
+}
+
+.MOGWiG_Divider:before, .MOGWiG_Divider:after {
+  content: "";
+  border-style: solid;
+  border-width: 0;
+  border-color: var(--colorNeutralStroke2);
+  flex-grow: 1;
+  min-width: 8px;
+}
+
+.MOGWiG_Divider.MOGWiG_subtle {
+  color: var(--colorNeutralForeground3);
+}
+
+.MOGWiG_Divider.MOGWiG_subtle:before, .MOGWiG_Divider.MOGWiG_subtle:after {
+  border-color: var(--colorNeutralStroke3);
+}
+
+.MOGWiG_Divider.MOGWiG_brand {
+  color: var(--colorPaletteRedBackground3);
+}
+
+.MOGWiG_Divider.MOGWiG_brand:before, .MOGWiG_Divider.MOGWiG_brand:after {
+  border-color: var(--colorPaletteRedBorder2);
+}
+
+.MOGWiG_Divider.MOGWiG_strong {
+  color: var(--colorNeutralForeground1);
+}
+
+.MOGWiG_Divider.MOGWiG_strong:before, .MOGWiG_Divider.MOGWiG_strong:after {
+  border-color: var(--colorNeutralStroke1);
+}
+
+.MOGWiG_Divider.MOGWiG_start:before, .MOGWiG_Divider.MOGWiG_end:after {
+  flex-grow: 0;
+}
+
+.MOGWiG_Divider > .MOGWiG_Content {
+  font-size: var(--fontSizeBase200);
+  width: fit-content;
+}

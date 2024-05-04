@@ -1,14 +1,9 @@
+// deno-lint-ignore-file ban-ts-comment
 import type { ComponentChildren } from "preact"
-import { IS_BROWSER, mergeClasses } from "./utils.ts"
-import { registry } from "./FluentProvider.ts"
+import { mergeClasses } from "./utils.ts"
 import type { JSX } from "preact"
 import { createElement } from "preact"
-
-if (!IS_BROWSER) {
-  const styles = await fetch(import.meta.resolve("./css/divider.css")).then(res => res.text())
-
-  registry.push(styles)
-}
+import styles from "./divider.styles.ts"
 
 type DividerProps = {
   appearance?: "strong" | "brand" | "subtle" | "default"
@@ -24,12 +19,14 @@ export function Divider({ appearance = "default", alignContent = "center", ...pr
     {
       ...props,
       class: mergeClasses(
-        "divider",
-        appearance,
-        props.vertical ? "vertical" : "",
-        props.inset ? "inset" : "",
-        props.children ? "hasContent" : "",
-        alignContent
+        styles.Divider,
+        // @ts-expect-error
+        styles[appearance],
+        props.vertical ? styles.vertical : "",
+        props.inset ? styles.inset : "",
+        props.children ? styles.hasContent : "",
+        // @ts-expect-error
+        styles[alignContent]
       )
     },
     props.children

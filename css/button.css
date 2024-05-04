@@ -1,4 +1,4 @@
-.button {
+.Button {
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
@@ -86,7 +86,7 @@
                 background-color: var(--colorSubtleBackgroundHover);
                 color: var(--colorNeutralForeground2Hover);
 
-                & .icon {
+                & :global(.Icon) {
                     color: var(--colorNeutralForeground2BrandHover);
                 }
             }
@@ -95,7 +95,7 @@
                 background-color: var(--colorSubtleBackgroundPressed);
                 color: var(--colorNeutralForeground2Pressed);
 
-                & .icon {
+                & :global(.Icon) {
                     color: var(--colorNeutralForeground2BrandPressed);
                 }
             }

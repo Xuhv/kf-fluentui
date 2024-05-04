@@ -6,9 +6,11 @@ export default function ButtonSamples() {
     <div className="grid gap-4">
       <h2 class="text-3xl">Button</h2>
 
-      <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Button.tsx">source</a>
+      <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Button.tsx">
+        source
+      </a>
 
-      <div className="grid grid-cols-2 w-fit gap-4">
+      <div className="columns-2 w-fit gap-4">
         <div className="grid gap-2">
           <h3 class="text-2xl">appearance</h3>
           <div className="flex gap-5">
@@ -26,19 +28,19 @@ export default function ButtonSamples() {
             <div>you need set gap and icon size by yourself</div>
           </div>
           <div className="flex gap-5">
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} appearance="primary">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} appearance="primary">
               Primary
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} appearance="secondary">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} appearance="secondary">
               Secondary
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} appearance="outline">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} appearance="outline">
               Outline
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} appearance="subtle">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} appearance="subtle">
               Subtle
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} appearance="transparent">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} appearance="transparent">
               Transparent
             </Button>
           </div>
@@ -47,19 +49,19 @@ export default function ButtonSamples() {
         <div className="grid gap-2">
           <h3 class="text-2xl">with icon - after</h3>
           <div className="flex gap-5">
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} iconPosition="after" appearance="primary">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} iconPosition="after" appearance="primary">
               Primary
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} iconPosition="after" appearance="secondary">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} iconPosition="after" appearance="secondary">
               Secondary
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} iconPosition="after" appearance="outline">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} iconPosition="after" appearance="outline">
               Outline
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} iconPosition="after" appearance="subtle">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} iconPosition="after" appearance="subtle">
               Subtle
             </Button>
-            <Button className="gap-1" icon={<IconIcons class="icon w-4 h-4" />} iconPosition="after" appearance="transparent">
+            <Button className="gap-1" icon={<IconIcons class="Icon w-4 h-4" />} iconPosition="after" appearance="transparent">
               Transparent
             </Button>
           </div>
@@ -68,11 +70,11 @@ export default function ButtonSamples() {
         <div className="grid gap-2">
           <h3 class="text-2xl">icon-only</h3>
           <div className="flex gap-5">
-            <Button icon={<IconIcons class="icon w-4 h-4" />} appearance="primary" />
-            <Button icon={<IconIcons class="icon w-4 h-4" />} appearance="secondary" />
-            <Button icon={<IconIcons class="icon w-4 h-4" />} appearance="outline" />
-            <Button icon={<IconIcons class="icon w-4 h-4" />} appearance="subtle" />
-            <Button icon={<IconIcons class="icon w-4 h-4" />} appearance="transparent" />
+            <Button icon={<IconIcons class="Icon w-4 h-4" />} appearance="primary" />
+            <Button icon={<IconIcons class="Icon w-4 h-4" />} appearance="secondary" />
+            <Button icon={<IconIcons class="Icon w-4 h-4" />} appearance="outline" />
+            <Button icon={<IconIcons class="Icon w-4 h-4" />} appearance="subtle" />
+            <Button icon={<IconIcons class="Icon w-4 h-4" />} appearance="transparent" />
           </div>
         </div>
 

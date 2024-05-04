@@ -1,5 +1,6 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "css.customData": [".vscode/tailwind.json"]
+  "css.customData": [".vscode/tailwind.json"],
+  "cssvar.ignore": ["**/css/*.css"],
 }

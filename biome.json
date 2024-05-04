@@ -12,6 +12,9 @@
       "a11y": {
         "useValidAnchor": "off",
         "useButtonType": "off"
+      },
+      "complexity": {
+        "noForEach": "off"
       }
     }
   },

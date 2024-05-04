@@ -1,4 +1,4 @@
-.dialog {
+.Dialog {
     inset: 0px;
     padding: 24px;
     margin: auto;
@@ -18,7 +18,7 @@
     box-shadow: var(--shadow64);
 }
 
-.backdrop {
+.Backdrop {
     inset: 0px;
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
@@ -35,12 +35,12 @@
     }
 }
 
-.dialog-title {
+.DialogTitle {
     display: flex;
     justify-content: space-between;
     font-size: var(--fontSizeHero700);
 
-    .dialog-dismiss>.icon {
+    .DialogDismiss>:global(.Icon) {
         align-self: center;
         align-content: end;
         width: 24px;
@@ -48,7 +48,7 @@
     }
 }
 
-.dialog-actions {
+.DialogActions {
     display: flex;
     justify-content: flex-end;
     gap: 20px;

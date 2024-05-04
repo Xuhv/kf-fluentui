@@ -2,16 +2,16 @@ import type { ComponentChildren, JSX, Ref, FunctionalComponent } from "preact"
 import { createContext } from "preact"
 import { forwardRef } from "preact/compat"
 import { useEffect, useRef, useState, useContext } from "preact/hooks"
-import { mergeRefs, mergeClasses, IS_BROWSER } from "./utils.ts"
-import { registry } from "./FluentProvider.ts"
+import { mergeRefs, mergeClasses } from "./utils.ts"
 import { createElement } from "preact"
 import { Button } from "./Button.ts"
 import { jsx as _jsx, jsxs as _jsxs } from "preact/jsx-runtime"
+import styles from "./dialog.styles.ts"
 
 function IconX({ size = 24, color = "currentColor", stroke = 2, ...props }) {
   return /*#__PURE__*/ _jsxs("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    class: "icon icon-tabler icon-tabler-x",
+    class: "Icon icon-tabler icon-tabler-x",
     width: size,
     height: size,
     viewBox: "0 0 24 24",
@@ -35,12 +35,6 @@ function IconX({ size = 24, color = "currentColor", stroke = 2, ...props }) {
       })
     ]
   })
-}
-
-if (!IS_BROWSER) {
-  const styles = await fetch(import.meta.resolve("./css/dialog.css")).then(res => res.text())
-
-  registry.push(styles)
 }
 
 type DialogContextState = {
@@ -90,7 +84,7 @@ export const Dialog: FunctionalComponent<DialogProps> = forwardRef(function Dial
   const render = () =>
     createElement(
       "div",
-      { ...props, _ref, class: mergeClasses("dialog", props) },
+      { ...props, _ref, class: mergeClasses(styles.Dialog, props) },
       createElement(
         DialogContext.Provider,
         {
@@ -132,7 +126,7 @@ function Backdrop(props: {
       onClick: e => {
         e.target === ref.current && props.onCancel()
       },
-      class: props.open ? "backdrop open" : "backdrop"
+      className: mergeClasses(styles.Backdrop, props.open ? styles.open : undefined)
     },
     props.children
   )
@@ -160,15 +154,15 @@ export const DialogTitle: FunctionalComponent<DialogTitleProps> = forwardRef(fun
     }
   }, [nonModal, hasAction])
 
-  return createElement("div", { ...props, className: `dialog-title ${className}`, ref }, [
+  return createElement("div", { ...props, className: `${styles.DialogTitle} ${className}`, ref }, [
     children ?? "",
     nonModal &&
       createElement(Button, {
         ref: buttonRef,
-        className: "dialog-dismiss",
+        className: styles.DialogDismiss,
         appearance: "subtle",
         onClick: () => onOpenChange?.(false),
-        icon: createElement(IconX, { className: "icon" })
+        icon: createElement(IconX, { className: "Icon" })
       })
   ])
 })
@@ -188,5 +182,5 @@ export const DialogActions: FunctionalComponent<DialogActionsProps> = forwardRef
     ;(actionsRef.current?.querySelector("input, button, textarea") as HTMLInputElement)?.focus()
   }, [setHasAction])
 
-  return createElement("div", { ...props, className: `dialog-actions ${className}`, ref: _ref }, children)
+  return createElement("div", { ...props, className: `${styles.DialogActions} ${className}`, ref: _ref }, children)
 })

@@ -1,14 +1,9 @@
+// deno-lint-ignore-file ban-ts-comment
 import type { JSX, Ref, FunctionalComponent } from "preact"
 import { createElement } from "preact"
 import { forwardRef } from "preact/compat"
-import { IS_BROWSER, mergeClasses } from "./utils.ts"
-import { registry } from "./FluentProvider.ts"
-
-if (!IS_BROWSER) {
-  const styles = await fetch(import.meta.resolve("./css/button.css")).then(res => res.text())
-
-  registry.push(styles)
-}
+import { mergeClasses } from "./utils.ts"
+import styles from "./button.styles.ts"
 
 type ButtonProps = Omit<JSX.HTMLAttributes<HTMLButtonElement>, "size" | "class" | "className" | "icon"> & {
   appearance?: "primary" | "secondary" | "outline" | "subtle" | "transparent"
@@ -50,11 +45,14 @@ export const Button: FunctionalComponent<ButtonProps> = forwardRef(function Butt
       ...props,
       ref,
       className: mergeClasses(
-        "button",
-        appearance,
-        size,
-        shape,
-        children && icon ? "withIcon" : !children && icon ? "iconOnly" : "",
+        styles.Button,
+        // @ts-expect-error
+        styles[appearance],
+        // @ts-expect-error
+        styles[size],
+        // @ts-expect-error
+        styles[shape],
+        children && icon ? styles.withIcon : !children && icon ? styles.iconOnly : "",
         className
       ),
       "aria-disabled": disabledFocusable,

@@ -1,16 +1,18 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
-    "./button": "./components/Button.ts",
-    "./dialog": "./components/Dialog.ts",
-    "./divider": "./components/Divider.ts",
-    "./provider": "./components/FluentProvider.ts",
-    "./utils": "./components/utils.ts",
-    "./theme": "./components/theme.ts"
+    ".": "./entry.ts",
+    "./buildTheme": "./buildTheme.ts"
   },
   "publish": {
-    "include": ["./components", "./deno.json", "README.md"],
+    "include": [
+      "./entry.ts",
+      "./buildTheme.ts",
+      "./components", 
+      "./deno.json", 
+      "README.md", 
+      "./static/fui.css"],
     "exclude": ["./components/scss"]
   },
   "lock": false,
@@ -33,6 +35,7 @@
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
     "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
+    "lightningcss": "npm:lightningcss@^1.24.1",
     "preact": "npm:preact@10.21.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
