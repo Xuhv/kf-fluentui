@@ -52,7 +52,10 @@ export const Button: FunctionalComponent<ButtonProps> = forwardRef(function Butt
         styles[size],
         // @ts-expect-error
         styles[shape],
-        children && icon ? styles.withIcon : !children && icon ? styles.iconOnly : "",
+        {
+          [styles.withIcon]: children && icon,
+          [styles.iconOnly]: !children && icon
+        },
         className
       ),
       "aria-disabled": disabledFocusable,

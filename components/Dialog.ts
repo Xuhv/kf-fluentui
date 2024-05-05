@@ -84,7 +84,7 @@ export const Dialog: FunctionalComponent<DialogProps> = forwardRef(function Dial
   const render = () =>
     createElement(
       "div",
-      { ...props, _ref, class: mergeClasses(styles.Dialog, props) },
+      { ...props, _ref, class: mergeClasses(styles.Dialog, props.className) },
       createElement(
         DialogContext.Provider,
         {

@@ -12,15 +12,18 @@ export function mergeRefs<T>(...refs: Array<Ref<T> | undefined>): RefCallback<T>
   }
 }
 
-export function getClassName<T extends Record<string, string>>(styles: T, k: keyof T | string): string | undefined {
-  return styles[k]
-}
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
+type Booleanish = boolean | undefined | null | {}
 
-export function mergeClasses(...classes: (string | undefined | { [k in "className" | "class"]?: string | undefined })[]): string {
+export function mergeClasses(...classes: (string | { [k: string]: Booleanish | undefined } | undefined)[]): string {
   return classes
-    .map(x => (typeof x === "object" ? x.class ?? x.className : x))
+    .map(x =>
+      typeof x === "object"
+        ? Object.keys(x)
+            .filter(k => x[k])
+            .join(" ")
+        : x
+    )
     .filter(Boolean)
     .join(" ")
 }
-
-export const IS_BROWSER = typeof document !== "undefined"
