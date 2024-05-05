@@ -1,9 +1,9 @@
 /**
  * You can execute this script to generate preset themes. All preset themes will be generated in ./static
- * 
+ *
  * @example
  * deno run -Ar 'jsr:@kf/fluentui/buildTheme'
- * 
+ *
  * @module
  */
 
@@ -30,7 +30,7 @@ export function extractTheme(themes: { [k: string]: Theme }, outDir: string) {
 
 /**
  * Currently, deno can't import css file.
- * @param outDir 
+ * @param outDir
  */
 export async function extractComponentsStyles(outDir: string) {
   await fetch(import.meta.resolve("./static/fui.css"))
@@ -39,15 +39,21 @@ export async function extractComponentsStyles(outDir: string) {
 }
 
 if (import.meta.main) {
-  if (Deno.args.at(-1)?.startsWith("jsr:"))
-    extractTheme(
-      {
-        webLight: webLightTheme,
-        webDark: webDarkTheme,
-        teamsLight: teamsLightTheme,
-        teamsDark: teamsDarkTheme,
-        teamsHighContrast: teamsHighContrastTheme
-      },
-      "./static"
-    )
+  const outDir = (() => {
+    const i = Deno.args.indexOf("--outDir")
+    if (i + 1) return Deno.args[i + 1]
+    return "./static"
+  })()
+
+  if (Deno.args.includes("--fui")) await extractComponentsStyles(outDir)
+  extractTheme(
+    {
+      webLight: webLightTheme,
+      webDark: webDarkTheme,
+      teamsLight: teamsLightTheme,
+      teamsDark: teamsDarkTheme,
+      teamsHighContrast: teamsHighContrastTheme
+    },
+    outDir
+  )
 }
