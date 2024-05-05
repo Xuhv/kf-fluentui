@@ -1,18 +1,12 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "exports": {
     ".": "./entry.ts",
     "./buildTheme": "./buildTheme.ts"
   },
   "publish": {
-    "include": [
-      "./entry.ts",
-      "./buildTheme.ts",
-      "./components", 
-      "./deno.json", 
-      "README.md", 
-      "./static/fui.css"],
+    "include": ["./entry.ts", "./buildTheme.ts", "./components", "./deno.json", "README.md", "./static/fui.css"],
     "exclude": ["./components/scss"]
   },
   "lock": false,
