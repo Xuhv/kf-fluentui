@@ -1,1 +1,0 @@
-export default {"start":"_0P6SPq_start","brand":"_0P6SPq_brand","end":"_0P6SPq_end","Content":"_0P6SPq_Content","Divider":"_0P6SPq_Divider","inset":"_0P6SPq_inset","vertical":"_0P6SPq_vertical","hasContent":"_0P6SPq_hasContent","strong":"_0P6SPq_strong","subtle":"_0P6SPq_subtle"}

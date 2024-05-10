@@ -6,8 +6,13 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "denoland.vscode-deno"
-      ]
+        "denoland.vscode-deno",
+        "bradlc.vscode-tailwindcss",
+        "phoenisx.cssvar"
+      ],
+      "settings": {
+        "deno.path": "/home/codespace/.asdf/shims/deno"
+      }
     }
   }
 }

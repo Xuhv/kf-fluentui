@@ -9,3 +9,6 @@
 _fresh/
 # npm dependencies
 node_modules/
+components/**/*.styles.ts
+components/*.styles.ts
+static/fui.css
