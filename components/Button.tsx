@@ -3,7 +3,7 @@ import type { JSX, Ref, FunctionalComponent } from "preact"
 import { createElement } from "preact"
 import { forwardRef } from "preact/compat"
 import { mergeClasses } from "./utils.ts"
-import styles from "./button.styles.ts"
+import styles from "./Button.styles.ts"
 
 type ButtonProps = Omit<JSX.HTMLAttributes<HTMLButtonElement>, "size" | "class" | "className" | "icon"> & {
   appearance?: "primary" | "secondary" | "outline" | "subtle" | "transparent"

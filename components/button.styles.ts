@@ -1,1 +1,0 @@
-export default {"large":"QwtDLW_large","subtle":"QwtDLW_subtle","square":"QwtDLW_square","withIcon":"QwtDLW_withIcon","primary":"QwtDLW_primary","outline":"QwtDLW_outline","transparent":"QwtDLW_transparent","circle":"QwtDLW_circle","small":"QwtDLW_small","Button":"QwtDLW_Button","iconOnly":"QwtDLW_iconOnly"}

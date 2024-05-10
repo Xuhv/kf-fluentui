@@ -40,11 +40,9 @@
     justify-content: space-between;
     font-size: var(--fontSizeHero700);
 
-    .DialogDismiss>:global(.Icon) {
-        align-self: center;
-        align-content: end;
-        width: 24px;
-        height: 24px;
+    .DialogDismiss {
+        display: grid;
+        place-items: center;
     }
 }
 

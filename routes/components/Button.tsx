@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button.ts"
+import { Button } from "../../components/Button.tsx"
 import { Input } from "../../components/Input.tsx";
 import IconIcons from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/icons.tsx"
 

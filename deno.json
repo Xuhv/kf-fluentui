@@ -1,12 +1,19 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "exports": {
     ".": "./entry.ts",
     "./buildTheme": "./buildTheme.ts"
   },
   "publish": {
-    "include": ["./entry.ts", "./buildTheme.ts", "./components", "./deno.json", "README.md", "./static/fui.css"],
+    "include": [
+      "./entry.ts",
+      "./buildTheme.ts",
+      "./components",
+      "./deno.json",
+      "README.md",
+      "./static/fui.css"
+    ],
     "exclude": ["./components/scss"]
   },
   "lock": false,
@@ -24,11 +31,16 @@
       "tags": ["fresh", "recommended"]
     }
   },
+  "fmt": {
+    "lineWidth": 120
+  },
   "exclude": ["**/_fresh/*"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
     "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
+    "@kf/preact-icons": "jsr:@kf/preact-icons@^1.1.239-beta.1",
+    "@might/fail": "jsr:@might/fail@^0.3.1",
     "preact": "npm:preact@10.21.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",

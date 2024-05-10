@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks"
-import { Dialog, DialogTitle } from "../components/Dialog.ts"
-import { Button } from "../components/Button.ts"
-import { DialogActions } from "../components/Dialog.ts"
+import { Dialog, DialogTitle } from "../components/Dialog.tsx"
+import { Button } from "../components/Button.tsx"
+import { DialogActions } from "../components/Dialog.tsx"
 
 export function DialogDemo() {
   const [open, setOpen] = useState(false)

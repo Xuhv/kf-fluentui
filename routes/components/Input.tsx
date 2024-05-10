@@ -4,9 +4,9 @@ import IconIcons from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/icons.tsx"
 export default function ButtonSamples() {
     return (
       <div className="grid gap-4">
-        <h2 class="text-3xl">Button</h2>
+        <h2 class="text-3xl">Input</h2>
   
-        <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Button.tsx">
+        <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Input.tsx">
           source
         </a>
   

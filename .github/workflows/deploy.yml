@@ -32,7 +32,7 @@ jobs:
           git commit -m "commit before publish, it will not affect the source repo"
 
       - name: Publish package
-        run: npx jsr publish
+        run: deno publish
 
       # - name: Deploy demo
       #   uses: denoland/deployctl@v1

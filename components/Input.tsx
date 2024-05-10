@@ -1,6 +1,6 @@
 import { FunctionComponent, JSX, Ref } from "preact";
 import { forwardRef } from "preact/compat";
-import styles from "./input.styles.ts";
+import styles from "./Input.styles.ts";
 import { mergeClasses } from "./utils.ts";
 
 interface InputProps

@@ -1,1 +1,0 @@
-export default {"underline":"_2dSVia_underline","disabled":"_2dSVia_disabled","small":"_2dSVia_small","large":"_2dSVia_large","Control":"_2dSVia_Control","Input":"_2dSVia_Input"}
