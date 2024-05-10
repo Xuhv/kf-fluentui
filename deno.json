@@ -14,7 +14,10 @@
       "README.md",
       "./static/fui.css"
     ],
-    "exclude": ["./components/scss"]
+    "exclude": [
+      "!./components/*.styles.ts",
+      "!./components/**/*.styles.ts"
+    ]
   },
   "lock": false,
   "tasks": {
@@ -22,7 +25,7 @@
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
     "start": "deno run -A ./buildModules.ts ; deno run -A --watch=static/,routes/ dev.ts",
-    "build": "deno run -A ./buildModules.ts ; deno run -A dev.ts build",
+    "build": "deno run -A ./buildModules.ts ; deno run -A dev.ts build ; deno publish --dry-run",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
