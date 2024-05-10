@@ -2,14 +2,10 @@ import { cssModules } from "https://deno.land/x/kf_fresh_plugins@v1.0.0-beta.3/p
 import { resolve } from "$std/path/mod.ts";
 
 const plugin = cssModules({
-    watchDir: resolve("./components"),
-    cssOutFile: resolve("./static/fui.css"),
-    tsOutDir: resolve("./components"),
-})
+  watchDir: resolve("./components"),
+  cssOutFile: resolve("./static/fui.css"),
+  tsOutDir: resolve("./components"),
+});
 
-export default plugin
-
-if (import.meta.main) {
-    await plugin.produceModules()
-    Deno.exit()
-}
+await plugin.produceModules();
+Deno.exit();
