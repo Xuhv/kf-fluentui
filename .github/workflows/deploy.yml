@@ -30,6 +30,7 @@ jobs:
           git config user.name "Your Name"
           git add .
           git commit -m "commit before publish, it will not affect the source repo"
+        continue-on-error: true
 
       - name: Publish package
         run: deno publish
