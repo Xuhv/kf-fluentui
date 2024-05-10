@@ -1,4 +1,5 @@
 import { Button } from "../../components/Button.ts"
+import { Input } from "../../components/Input.tsx";
 import IconIcons from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/icons.tsx"
 
 export default function ButtonSamples() {
@@ -19,6 +20,7 @@ export default function ButtonSamples() {
             <Button appearance="outline">Outline</Button>
             <Button appearance="subtle">Subtle</Button>
             <Button appearance="transparent">Transparent</Button>
+            <Input  contentBefore={<IconIcons class="Icon w-4 h-4" />} contentAfter={<IconIcons class="Icon w-4 h-4" />} />
           </div>
         </div>
 
@@ -180,6 +182,7 @@ export default function ButtonSamples() {
             <Button size="small" appearance="transparent">
               Transparent
             </Button>
+            <Input size="small" />
           </div>
         </div>
 
@@ -201,6 +204,7 @@ export default function ButtonSamples() {
             <Button size="large" appearance="transparent">
               Transparent
             </Button>
+            <Input size="large" />
           </div>
         </div>
       </div>

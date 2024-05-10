@@ -14,6 +14,9 @@ export default function Layout({ Component }: PageProps) {
         <li>
           <a href="/components/Dialog">Dialog</a>
         </li>
+        <li>
+          <a href="/components/Input">Input</a>
+        </li>
       </ul>
 
       <Divider vertical />

@@ -1,0 +1,109 @@
+.Input {
+    border: 1px solid var(--colorNeutralStroke1);
+    border-bottom-color: var(--colorNeutralStrokeAccessible);
+    border-radius: var(--borderRadiusMedium);
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    min-height: 32px;
+
+    &:has(.Control:focus-visible) {
+        border-color: var(--colorNeutralStroke1Selected);
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &.underline {
+        border-style: none;
+        border-bottom: 1px solid;
+        border-radius: 0;
+
+        &::after {
+            clip-path: unset;
+            border-radius: 0;
+        }
+    }
+
+    &.disabled {
+        border-color: var(--colorNeutralStrokeDisabled);
+        color: var(--colorNeutralForegroundDisabled);
+        cursor: not-allowed;
+
+        .Control {
+            cursor: not-allowed;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &::after {
+        box-sizing: border-box;
+        content: "";
+        position: absolute;
+        left: -1px;
+        bottom: -1px;
+        right: -1px;
+        height: max(2px, var(--borderRadiusMedium));
+        border-bottom-left-radius: var(--borderRadiusMedium);
+        border-bottom-right-radius: var(--borderRadiusMedium);
+        border-bottom: 2px solid var(--colorCompoundBrandStroke);
+        clip-path: inset(calc(100% - 2px) 0px 0px);
+        transform: scaleX(0);
+        transition-property: transform;
+        transition-duration: var(--durationUltraFast);
+        transition-delay: var(--curveAccelerateMid);
+    }
+
+    .Control {
+        display: block;
+        padding: 0 12px;
+        font-size: var(--fontSizeBase300);
+        line-height: var(--lineHeightBase300);
+        border-radius: var(--borderRadiusMedium);
+        flex-grow: 1;
+
+        &::placeholder {
+            color: var(--colorNeutralForeground4)
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:disabled::placeholder {
+            color: var(--colorNeutralForegroundDisabled);
+        }
+    }
+
+    &.small .Control {
+        font-size: var(--fontSizeBase200);
+        line-height: var(--lineHeightBase200);
+        min-height: 24px;
+    }
+
+    &.large .Control {
+        font-size: var(--fontSizeBase400);
+        line-height: var(--lineHeightBase400);
+        min-height: 40px;
+    }
+
+    *+.Control {
+        padding-left: 4px;
+    }
+
+    .Control:has(+ *) {
+        padding-right: 4px;
+    }
+
+    &:has(* + .Control) {
+        padding-left: 10px;
+    }
+
+    &:has(.Control + *) {
+        padding-right: 10px;
+    }
+}
