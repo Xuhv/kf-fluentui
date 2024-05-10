@@ -1,10 +1,10 @@
-import { useState } from "preact/hooks"
-import { Dialog, DialogTitle } from "../components/Dialog.tsx"
-import { Button } from "../components/Button.tsx"
-import { DialogActions } from "../components/Dialog.tsx"
+import { useState } from "preact/hooks";
+import { Dialog, DialogTitle } from "../components/Dialog.tsx";
+import { Button } from "../components/Button.tsx";
+import { DialogActions } from "../components/Dialog.tsx";
 
 export function DialogDemo() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="flex flex-col gap-3">
@@ -12,7 +12,11 @@ export function DialogDemo() {
         <h2 class="text-3xl">Dialog</h2>
 
         <div className="my-3">
-          <a target="_blank" rel="noreferrer" href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Dialog.tsx">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Xuhv/kf-fluentui/blob/main/routes/components/Dialog.tsx"
+          >
             source
           </a>
         </div>
@@ -26,16 +30,24 @@ export function DialogDemo() {
           <h3 className="text-2xl">Title</h3>
         </DialogTitle>
         <div className="h-[500px] flex flex-col">
-          <p>When dialog open, the first focusable element like button will be focused</p>
+          <p>When dialog open, the first focusable element like button will be focused.</p>
+          <p>`DialogActions` component has same behavior and higher priority.</p>
           <div className="flex-grow" />
         </div>
         <DialogActions>
-          <Button onClick={() => {
-            setOpen(false)
-            alert("close")
-          }}>Close</Button>
+          <Button
+            onClick={() => {
+              setOpen(false);
+              alert("close");
+            }}
+            onFocus={() => {
+              console.log(1);
+            }}
+          >
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
     </div>
-  )
+  );
 }

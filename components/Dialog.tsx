@@ -9,6 +9,7 @@ import { DismissRegular } from "@kf/preact-icons";
 
 type DialogContextState = {
   nonModal: boolean;
+  open: boolean;
   onOpenChange?: (open: boolean) => void;
   hasAction: boolean;
   setHasAction: (hasAction: boolean) => void;
@@ -16,6 +17,7 @@ type DialogContextState = {
 
 const DialogContext = createContext<DialogContextState>({
   nonModal: false,
+  open: false,
   onOpenChange: undefined,
   hasAction: false,
   setHasAction: () => {},
@@ -38,6 +40,7 @@ export const Dialog: FunctionalComponent<DialogProps> = forwardRef(
     const [dialogRef, setDialogRef] = useState<HTMLDivElement | null>(null);
     const _ref = mergeRefs(setDialogRef, ref);
     const [hasAction, setHasAction] = useState(false);
+    const initRef = useRef(false);
 
     useEffect(() => {
       const h = (e: KeyboardEvent) => {
@@ -50,6 +53,7 @@ export const Dialog: FunctionalComponent<DialogProps> = forwardRef(
     }, [props.onOpenChange]);
 
     useEffect(() => {
+      if (!initRef.current) return;
       const el = dialogRef?.querySelector("input, button, textarea") as
         | HTMLInputElement
         | undefined;
@@ -61,6 +65,7 @@ export const Dialog: FunctionalComponent<DialogProps> = forwardRef(
         <DialogContext.Provider
           value={{
             nonModal: modalType === "non-modal",
+            open: props.open,
             onOpenChange: props.onOpenChange,
             hasAction,
             setHasAction,
@@ -117,16 +122,10 @@ export const DialogTitle: FunctionalComponent<DialogTitleProps> = forwardRef(
     { children, className, ...props }: DialogTitleProps,
     ref: Ref<HTMLDivElement>,
   ): JSX.Element {
-    const { nonModal, onOpenChange, hasAction } = useContext<
+    const { nonModal, onOpenChange } = useContext<
       DialogContextState
     >(DialogContext);
     const buttonRef = useRef<HTMLButtonElement>(null);
-
-    useEffect(() => {
-      if (nonModal && !hasAction) {
-        buttonRef.current?.focus();
-      }
-    }, [nonModal, hasAction]);
 
     return (
       <div {...props} ref={ref} className={mergeClasses(styles.DialogTitle, className)}>
@@ -152,16 +151,16 @@ export const DialogActions: FunctionalComponent<DialogActionsProps> = forwardRef
   { className, children, ...props }: DialogActionsProps,
   ref: Ref<HTMLDivElement>,
 ): JSX.Element {
-  const { setHasAction } = useContext<DialogContextState>(DialogContext);
+  const { setHasAction, hasAction, open } = useContext<DialogContextState>(DialogContext);
   const actionsRef = useRef<HTMLDivElement>(null);
   const _ref = mergeRefs(actionsRef, ref);
 
   useEffect(() => {
-    setHasAction(true);
+    if (!hasAction) setHasAction(true);
     (actionsRef.current?.querySelector(
       "input, button, textarea",
     ) as HTMLInputElement)?.focus();
-  }, [setHasAction]);
+  }, [setHasAction, hasAction, open]);
 
   return <div {...props} ref={_ref} className={mergeClasses(styles.DialogActions, className)}>{children}</div>;
 });
