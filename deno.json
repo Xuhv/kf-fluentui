@@ -1,6 +1,6 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "exports": {
     ".": "./entry.ts",
     "./buildTheme": "./buildTheme.ts"

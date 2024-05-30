@@ -6,6 +6,7 @@
     align-items: center;
     position: relative;
     min-height: 32px;
+    color: var(--colorNeutralForeground1);
 
     &:has(.Control:focus-visible) {
         border-color: var(--colorNeutralStroke1Selected);
@@ -65,6 +66,7 @@
         line-height: var(--lineHeightBase300);
         border-radius: var(--borderRadiusMedium);
         flex-grow: 1;
+        background-color: transparent;
 
         &::placeholder {
             color: var(--colorNeutralForeground4)
@@ -91,19 +93,50 @@
         min-height: 40px;
     }
 
-    *+.Control {
+    span+.Control,
+    i+.Control,
+    svg+.Control {
         padding-left: 4px;
     }
 
-    .Control:has(+ *) {
+    .Control:has(+ span),
+    .Control:has(+ i),
+    .Control:has(+ svg) {
         padding-right: 4px;
     }
 
-    &:has(* + .Control) {
+    &:has(span, i, svg + .Control) {
         padding-left: 10px;
     }
 
-    &:has(.Control + *) {
+    &:has(.Control + span),
+    &:has(.Control + i),
+    &:has(.Control + svg) {
         padding-right: 10px;
+    }
+}
+
+.Input:has(.TextareaControl) {
+    padding-bottom: 2px;
+
+    .TextareaControl {
+        padding-top: 6px;
+        padding-left: 12px;
+
+        &.horizontalResize {
+            resize: horizontal;
+        }
+
+        &.verticalResize {
+            resize: vertical;
+        }
+
+        &.noneResize {
+            resize: none;
+        }
+
+        &.bothResize {
+            resize: both;
+        }
     }
 }

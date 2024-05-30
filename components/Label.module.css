@@ -1,0 +1,12 @@
+.Label {
+    color: var(--colorNeutralForeground1);
+
+    .RequiredIndicator {
+        padding-left: var(--spacingHorizontalXS);
+        color: var(--colorPaletteRedForeground3);
+    }
+
+    &.semibord {
+        font-weight: var(--fontWeightSemibold);
+    }
+}

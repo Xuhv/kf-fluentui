@@ -3,14 +3,13 @@ import { forwardRef } from "preact/compat";
 import styles from "./Input.styles.ts";
 import { mergeClasses } from "./utils.ts";
 
-interface InputProps
-  extends
-    Omit<JSX.HTMLAttributes<HTMLInputElement>, "size" | "className" | "class"> {
+export interface InputProps extends Omit<JSX.HTMLAttributes<HTMLInputElement>, "size" | "className" | "class"> {
   size?: "small" | "medium" | "large";
   className?: string;
   contentBefore?: JSX.Element;
   contentAfter?: JSX.Element;
   appearance?: "underline" | "outline";
+  containerClassName?: string;
 }
 
 /**
@@ -32,8 +31,7 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
         //  @ts-expect-error
         class={mergeClasses(styles.Input, styles[size], styles[appearance], {
           [styles.disabled]: props.disabled,
-        })}
-        onFocus={() => console.log("focus")}
+        }, props.containerClassName)}
       >
         {contentBefore}
         <input
