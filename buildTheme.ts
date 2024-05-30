@@ -45,7 +45,7 @@ if (import.meta.main) {
     return "./static"
   })()
 
-  if (Deno.args.includes("--fui")) await extractComponentsStyles(outDir)
+  await extractComponentsStyles(outDir)
   extractTheme(
     {
       webLight: webLightTheme,

@@ -14,7 +14,7 @@ export default async function App({ headers }: Request, { Component }: FreshCont
         <link rel="stylesheet" href="/styles.css" />
         <link rel="stylesheet" href={`/${theme}.css`} />
       </head>
-      <body style={{ backgroundColor: tokens.colorNeutralBackground1 }}>
+      <body style={{ backgroundColor: tokens.colorNeutralBackground1, color: tokens.colorNeutralForeground1 }}>
         <Component />
       </body>
     </html>

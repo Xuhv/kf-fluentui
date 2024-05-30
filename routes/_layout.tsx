@@ -1,10 +1,16 @@
-import type { PageProps } from "$fresh/server.ts"
-import { Divider } from "../components/Divider.tsx"
+import type { PageProps } from "$fresh/server.ts";
+import { Divider } from "../components/Divider.tsx";
 
 export default function Layout({ Component }: PageProps) {
   return (
     <div class="h-screen grid grid-cols-[auto_auto_1fr]">
-      <ul className="w-56 pl-2">
+      <ul className="w-56 px-2">
+        <li class="py-2">
+          <a href="/">Home</a>
+        </li>
+
+        <Divider />
+
         <li>
           <a href="/components/Button">Button</a>
         </li>
@@ -15,7 +21,7 @@ export default function Layout({ Component }: PageProps) {
           <a href="/components/Dialog">Dialog</a>
         </li>
         <li>
-          <a href="/components/Input">Input</a>
+          <a href="/components/Input">Input, Label, Textarea</a>
         </li>
       </ul>
 
@@ -24,5 +30,5 @@ export default function Layout({ Component }: PageProps) {
         <Component />
       </div>
     </div>
-  )
+  );
 }
