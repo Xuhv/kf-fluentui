@@ -164,3 +164,5 @@ export const DialogActions: FunctionalComponent<DialogActionsProps> = forwardRef
 
   return <div {...props} ref={_ref} className={mergeClasses(styles.DialogActions, className)}>{children}</div>;
 });
+
+export { styles as dialogStyles }

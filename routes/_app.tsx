@@ -1,8 +1,7 @@
 import type { FreshContext } from "$fresh/server.ts"
-import { tokens } from "@kf/fluentui-tokens";
 
-export default async function App({ headers }: Request, { Component }: FreshContext) {
-  const theme = headers.get("x-theme") ?? "teamsDark"
+export default async function App({ url }: Request, { Component }: FreshContext) {
+  const theme = new URL(url).searchParams.get("theme") ?? "teamsDark"
 
   return (
     <html>
@@ -14,7 +13,7 @@ export default async function App({ headers }: Request, { Component }: FreshCont
         <link rel="stylesheet" href="/styles.css" />
         <link rel="stylesheet" href={`/${theme}.css`} />
       </head>
-      <body style={{ backgroundColor: tokens.colorNeutralBackground1, color: tokens.colorNeutralForeground1 }}>
+      <body>
         <Component />
       </body>
     </html>

@@ -1,0 +1,23 @@
+.Surface {
+    padding: 8px;
+    color: var(--colorNeutralForeground1);
+
+    &.level1 {
+        background-color: var(--colorNeutralBackground1);
+    }
+    &.level2 {
+        background-color: var(--colorNeutralBackground2);
+    }
+    &.level3 {
+        background-color: var(--colorNeutralBackground3);
+    }
+    &.level4 {
+        background-color: var(--colorNeutralBackground4);
+    }
+    &.level5 {
+        background-color: var(--colorNeutralBackground5);
+    }
+    &.level6 {
+        background-color: var(--colorNeutralBackground6);
+    }
+}

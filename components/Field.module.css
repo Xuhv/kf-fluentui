@@ -1,0 +1,43 @@
+.Field {
+    display: grid;
+
+    &.horizontal {
+        grid-template-columns: 30% 1fr;
+    }
+
+    &.vertical {
+        grid-template-columns: 1fr;
+    }
+
+    .Container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacingVerticalXXS);
+
+        .Message {
+            font-size: var(--fontSizeBase200);
+            line-height: var(--lineHeightBase200);
+            color: var(--colorNeutralForeground3);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .Icon {
+                display: inline-block;
+                width: var(--fontSizeBase200);
+            }
+
+            &.error {
+                color: var(--colorPaletteRedForeground1);
+            }
+
+            &.warning .Icon {
+                color: var(--colorPaletteOrangeForeground1);
+            }
+
+            &.success .Icon {
+                color: var(--colorPaletteGreenForeground1);
+            }
+        }
+    }
+}

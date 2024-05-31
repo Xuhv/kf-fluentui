@@ -22,3 +22,5 @@ export const Label: FunctionComponent<LabelProps> = forwardRef(
     );
   },
 );
+
+export { styles as labelStyles }

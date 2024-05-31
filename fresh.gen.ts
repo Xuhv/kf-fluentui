@@ -9,6 +9,7 @@ import * as $components_Button from "./routes/components/Button.tsx";
 import * as $components_Dialog from "./routes/components/Dialog.tsx";
 import * as $components_Divider from "./routes/components/Divider.tsx";
 import * as $components_Input from "./routes/components/Input.tsx";
+import * as $components_Surface from "./routes/components/Surface.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $DialogDemo from "./islands/DialogDemo.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -22,6 +23,7 @@ const manifest = {
     "./routes/components/Dialog.tsx": $components_Dialog,
     "./routes/components/Divider.tsx": $components_Divider,
     "./routes/components/Input.tsx": $components_Input,
+    "./routes/components/Surface.tsx": $components_Surface,
     "./routes/index.tsx": $index,
   },
   islands: {

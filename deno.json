@@ -41,6 +41,7 @@
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
+    "@/": "./",
     "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
     "@kf/preact-icons": "jsr:@kf/preact-icons@^1.1.239-beta.1",
     "@might/fail": "jsr:@might/fail@^0.3.1",

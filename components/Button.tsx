@@ -64,3 +64,5 @@ export const Button: FunctionalComponent<ButtonProps> = forwardRef(function Butt
     content
   )
 })
+
+export { styles as buttonStyles }

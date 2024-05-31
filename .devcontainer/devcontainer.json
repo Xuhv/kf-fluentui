@@ -8,7 +8,8 @@
       "extensions": [
         "denoland.vscode-deno",
         "bradlc.vscode-tailwindcss",
-        "phoenisx.cssvar"
+        "phoenisx.cssvar",
+        "Codeium.codeium"
       ],
       "settings": {
         "deno.path": "/home/codespace/.asdf/shims/deno"

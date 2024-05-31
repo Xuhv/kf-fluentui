@@ -17,6 +17,7 @@ export const Textarea: FunctionComponent<InputProps> = forwardRef(
     {
       appearance = "outline",
       resize = "both",
+      className,
       ...props
     }: InputProps,
     ref: Ref<HTMLTextAreaElement>,
@@ -31,7 +32,7 @@ export const Textarea: FunctionComponent<InputProps> = forwardRef(
         <textarea
           {...props}
           ref={ref}
-          class={mergeClasses(styles.Control, styles.TextareaControl, styles[`${resize}Resize`], props.className)}
+          class={mergeClasses(styles.Control, styles.TextareaControl, styles[`${resize}Resize`], className)}
         />
       </span>
     );

@@ -22,6 +22,7 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
       appearance = "outline",
       contentBefore,
       contentAfter,
+      className,
       ...props
     }: InputProps,
     ref: Ref<HTMLInputElement>,
@@ -37,10 +38,12 @@ export const Input: FunctionComponent<InputProps> = forwardRef(
         <input
           {...props}
           ref={ref}
-          class={mergeClasses(styles.Control, props.className)}
+          class={mergeClasses(styles.Control, className)}
         />
         {contentAfter}
       </span>
     );
   },
 );
+
+export { styles as inputStyles }

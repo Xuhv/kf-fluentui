@@ -24,6 +24,7 @@ export const Divider: FunctionComponent<DividerProps> = forwardRef(
       children,
       vertical,
       inset,
+      className,
       ...props
     }: DividerProps,
     ref: Ref<HTMLDivElement>,
@@ -43,7 +44,7 @@ export const Divider: FunctionComponent<DividerProps> = forwardRef(
           },
           // @ts-expect-error
           styles[alignContent],
-          props.className,
+          className,
         )}
       >
         {children}
@@ -51,3 +52,5 @@ export const Divider: FunctionComponent<DividerProps> = forwardRef(
     );
   },
 );
+
+export { styles as dividerStyles }
