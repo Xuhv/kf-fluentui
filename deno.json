@@ -1,6 +1,6 @@
 {
   "name": "@kf/fluentui",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "exports": {
     ".": "./entry.ts",
     "./buildTheme": "./buildTheme.ts"
@@ -43,7 +43,7 @@
     "$std/": "https://deno.land/std@0.216.0/",
     "@/": "./",
     "@kf/fluentui-tokens": "jsr:@kf/fluentui-tokens@^1.0.0-alpha.16",
-    "@kf/preact-icons": "jsr:@kf/preact-icons@^1.1.239-beta.1",
+    "@kf/preact-icons": "jsr:@kf/preact-icons@^1.1.239",
     "@might/fail": "jsr:@might/fail@^0.3.1",
     "preact": "npm:preact@10.21.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",

@@ -2,12 +2,14 @@ import { ForwardedRef, forwardRef, FunctionComponent, isValidElement, JSX } from
 import { mergeClasses } from "./utils.ts";
 import { Label, LabelProps } from "./Label.tsx";
 import styles from "./Field.styles.ts";
-import { CheckmarkCircleFilled, ErrorCircleFilled, WarningFilled } from "@kf/preact-icons";
+import { CheckmarkCircleFilled } from "@kf/preact-icons/icons/CheckmarkCircle.ts";
+import { ErrorCircleFilled } from "@kf/preact-icons/icons/ErrorCircle.ts";
+import { WarningFilled } from "@kf/preact-icons/icons/Warning.ts";
 
 const ICONS = {
-  "success": <CheckmarkCircleFilled />,
-  "error": <ErrorCircleFilled />,
-  "warning": <WarningFilled />,
+  "success": <CheckmarkCircleFilled size={12} />,
+  "error": <ErrorCircleFilled size={12} />,
+  "warning": <WarningFilled size={12} />,
   "none": null,
 };
 

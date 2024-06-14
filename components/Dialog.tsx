@@ -5,7 +5,7 @@ import { useContext, useEffect, useRef, useState } from "preact/hooks";
 import { mergeClasses, mergeRefs } from "./utils.ts";
 import { Button } from "./Button.tsx";
 import styles from "./Dialog.styles.ts";
-import { DismissRegular } from "@kf/preact-icons";
+import { DismissRegular } from "@kf/preact-icons/icons/Dismiss.ts";
 
 type DialogContextState = {
   nonModal: boolean;
@@ -134,7 +134,7 @@ export const DialogTitle: FunctionalComponent<DialogTitleProps> = forwardRef(
           (
             <Button
               ref={buttonRef}
-              icon={<DismissRegular width={24} height={24} className="Icon" />}
+              icon={<DismissRegular size={24} className="Icon" />}
               appearance="subtle"
               onClick={() => onOpenChange?.(false)}
               className={styles.DialogDismiss}
